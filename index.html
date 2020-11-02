@@ -78,8 +78,8 @@ rectangles.push({x:i, y:_y});
  
 
 
-ball.ySpeed = random(3,5)
-    ball.xSpeed = random(3,5)
+ball.ySpeed = random(2,3)
+    ball.xSpeed = random(2,3)
     //X for rectangles
 
 
@@ -147,8 +147,11 @@ ball.xSpeed = -ball.xSpeed
 for  (var i = 0 ; i<rectangles.length;i++) {
  rect(rectangles[i].x,rectangles[i].y,r,t)
     if(AABB(rectangles[i].x,rectangles[i].y,r,t,ballX-ballSize/2,ballY-ballSize/2,ballSize,ballSize)){
-    rectangles.splice(i,1)
-      ball.ySpeed = -ball.ySpeed
+    
+	rectangles.splice(i,1)
+      	ball.ySpeed = ball.ySpeed + 0.5
+	ball.xSpeed = ball.xSpeed + 0.5    
+	ball.ySpeed = -ball.ySpeed
       
     }
 }
